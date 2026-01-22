@@ -1,39 +1,50 @@
-# 🍽️ Full Stack Restaurant Reservation App
+# 🍽️ Restaurant Reservation System (Full Stack)
 
-A comprehensive mobile application for discovering restaurants, viewing details, and making real-time reservations. Built with **Flutter** (Frontend), **Node.js** (Backend), and **MSSQL** (Database).
+A production-ready mobile application designed to bridge the gap between culinary discovery and seamless table management. This project demonstrates a complete **Full Stack** architecture, integrating a **Flutter** frontend with a robust **Node.js** backend and an **MSSQL** relational database.
 
 ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white)
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![MSSQL](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white)
 
-## 📱 Features
+---
 
-* **Authentication:** Secure Login & Registration system.
-* **Discovery:** Filter restaurants by categories (Kebab, Burger, Pizza, etc.) or search by name.
-* **Optimized Search:** Implemented **Debounce** mechanism for efficient API calls during search.
-* **Reservation System:** Real-time checking of available time slots and booking functionality.
-* **Favorites:** Users can save their favorite restaurants (Persistent data using **SharedPreferences**).
-* **Localization:** Multi-language support (English & Turkish) with dynamic content translation.
-* **Theme Support:** Dark and Light mode adaptability.
-* **Modern UI:** Custom widgets, smooth animations, and responsive design.
+## 📖 About the Project
 
-## 🛠️ Tech Stack
+This application was built to simulate a real-world restaurant booking platform. It solves the problem of finding available dining slots in real-time. Unlike simple CRUD apps, this project handles complex logic such as **concurrent booking management**, **local data persistence**, and **dynamic filtering**.
 
-### Frontend (Mobile)
-* **Framework:** Flutter (Dart)
-* **Networking:** Dio
-* **State Management:** `setState` (Optimized for performance)
-* **Storage:** Shared Preferences (for local data persistence)
-* **Utils:** Intl (Date formatting), Localization delegates
+### 🏗️ Architecture & Design Decisions
 
-### Backend (API)
-* **Runtime:** Node.js
-* **Framework:** Express.js
-* **Database Driver:** mssql
+The project follows a **Client-Server-Database** architecture ensuring separation of concerns:
 
-### Database
-* **System:** Microsoft SQL Server (SSMS)
-* **Structure:** Relational schema including Users, Restaurants, Reservations, and Availability Slots.
+1.  **Frontend (Mobile - Flutter):**
+    * Built with **Dart**, focusing on a smooth 60fps performance.
+    * **State Management:** Utilizes optimized `setState` patterns for granular UI updates, ensuring efficiency without boilerplate bloat.
+    * **Networking:** Uses `Dio` for handling HTTP requests with interceptors for error handling.
+    * **Persistence:** Implements `SharedPreferences` to cache user favorites locally, allowing the app to remember preferences even after restarting.
+    * **Localization:** Features a complete dual-language system (Turkish/English) using `Intl`, making the app scalable for international markets.
+
+2.  **Backend (API - Node.js & Express):**
+    * Acts as the middleware between the mobile app and the database.
+    * Exposes RESTful endpoints for authentication (`/auth`), restaurant data (`/restaurants`), and booking logic (`/book`).
+    * Handles business logic such as calculating available time slots based on existing reservations.
+
+3.  **Database (Microsoft SQL Server):**
+    * A relational database structure designed with normalization in mind.
+    * Tables include `Users`, `Restaurants`, `Reservations`, and `AvailabilitySlots`, linked via Foreign Keys to maintain data integrity.
+
+---
+
+## ✨ Key Features
+
+* **🔐 Secure Authentication:** Full Login/Register flow with password hashing and session management.
+* **🔍 Smart Search (Debounce):** The search bar waits for the user to stop typing before making API calls, reducing server load and improving UX.
+* **📅 Real-Time Availability:** When a user selects a date, the backend calculates and returns only the truly available time slots, preventing double-booking.
+* **❤️ Persistent Favorites:** Users can "heart" restaurants. This data is instantly saved to the device's local storage and synced with the user's profile.
+* **🌍 Multi-Language Support:** The app automatically detects or allows manual switching between **English** and **Turkish**, translating all labels, buttons, and messages dynamically.
+* **🌙 Dark/Light Mode:** A fully adaptive UI that respects system preferences or user choice.
+
+---
 
 ## 📸 Screenshots
 
