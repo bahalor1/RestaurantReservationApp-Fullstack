@@ -57,7 +57,7 @@ These features demonstrate the depth of the application, including filtering, se
 |:---:|:---:|:---:|
 | <img src="screenshots/kategori.png" width="250"> | <img src="screenshots/rezervasyon_detay.png" width="250"> | <img src="screenshots/ayarlar.png" width="250"> |
 | **Dark Mode** | **Language Selection** | **Change Password** |
-| <img src="screenshots/darkmode.png" width="250"> | <img src="screenshots/dil.png" width="250"> | <img src="screenshots/sifredegistir.png" width="250"> |
+| <img src="screenshots/darkmode.png" width="250"> | <img src="screenshots/dil.png" width="250"> | <img src="screenshots/sifredegistirme.png" width="250"> |
 
 </details>
 
